@@ -76,10 +76,12 @@ namespace LoginScreen
             if (inputID == myID && inputPW == myPW)
             {
                 MessageBox.Show("로그인 성공!");
+                lblErrorMsg.Visible = false; // 로그인 성공 시 에러 메시지 숨김
             }
             else
             {
-                MessageBox.Show("로그인 실패!", "로그인", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //MessageBox.Show("로그인 실패!", "로그인", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                lblErrorMsg.Visible = true;
             }
         }
 
@@ -99,6 +101,11 @@ namespace LoginScreen
                 e.SuppressKeyPress = true; // 기본비프음방지
                 btnLogin.PerformClick(); // 패스워드입력창이포커스를갖게끔
             }
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
